@@ -1,0 +1,26 @@
+{
+  "SERVER_URL_TABLES": "http://localhost/adminlte-dashboard/crear_tablas.php"    ,
+    "server_generador": "https://crudgen.valorpoint.net/core/index.php?generator=new&uuid=",
+   "SERVER_REGISTRO": "http://localhost/registro.php",
+    "SERVER_VALIDAR_CODIGO": "http://localhost/adminlte-dashboard/validar_codigo.php",
+    "SERVER_GENERATEANGULAR": "http://localhost/adminlte-dashboard/src/Component/generateAngularCrud.php",
+    "SERVER_GENERATEVUE": "http://localhost/adminlte-dashboard/src/Component/generateVueCrud",
+    "SERVER_GENERATE_SPRING" : "http://localhost/adminlte-dashboard/src/Component/generateSpringCrud",
+    "SERVER_URL_CALLER": "http://localhost/adminlte-dashboard/src/Component/CallerLenguage.php",
+
+    "TEMPLATE_VUE": "C:\\xamppchido\\htdocs\\adminlte-dashboard\\templates\\vue-crud-app",
+    "TEMPLATE_SPRING": "C:\\xamppchido\\htdocs\\adminlte-dashboard\\templates\\javacrud",
+    "TEMPLATE_ANGULAR_GLOBAL": "C:\\xamppchido\\htdocs\\adminlte-dashboard\\templates\\frontend-crud",
+    "TEMPLATE_ANGULAR_MODULE": "C:\\xamppchido\\htdocs\\adminlte-dashboard\\templates\\frontend-crud\\src\\app\\productos",
+
+
+    "OUTPUT_VUE": "C:\\xamppchido\\htdocs\\adminlte-dashboard\\outputVue",
+    "OUTPUT_ANGULAR": "C:\\xamppchido\\htdocs\\adminlte-dashboard\\outputAngular",
+    "OUTPUT_SPRING": "C:\\xamppchido\\htdocs\\adminlte-dashboard\\outputSpring"
+
+
+
+
+    
+}
+ 

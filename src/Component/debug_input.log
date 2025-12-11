@@ -1,0 +1,27 @@
+Array
+(
+    [tableName] => Felinos
+    [columns] => Array
+        (
+            [0] => Array
+                (
+                    [0] => id
+                    [1] => int
+                )
+
+            [1] => Array
+                (
+                    [0] => nombre
+                    [1] => varchar(100)
+                )
+
+            [2] => Array
+                (
+                    [0] => raza
+                    [1] => varchar(100)
+                )
+
+        )
+
+    [framework] => Spring
+)

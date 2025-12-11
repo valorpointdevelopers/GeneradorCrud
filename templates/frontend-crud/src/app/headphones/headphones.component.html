@@ -1,0 +1,66 @@
+<div class="lista-productos-contenedor">
+  <h2>Bienvenido a la Aplicación de Audífonos</h2>
+
+  <button class="agregar-headphone" (click)="abrirModal(null)">+</button>
+
+
+  <div *ngIf="headphones.length > 0; else noHeadphones">
+    <h3>Lista de audífonos</h3>
+    <ul>
+      <li *ngFor="let headphone of headphones">
+        <span>{{ headphone.nombreProducto }} - MX${{ headphone.precio }}</span>
+        <div>
+          <button (click)="abrirModal(headphone)">
+            <i class="fa fa-edit"></i>
+          </button>
+          <button (click)="confirmDelete(headphone.id)">
+            <i class="fa fa-trash icono-papelera"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noHeadphones>
+    <p>No hay audífonos disponibles.</p>
+  </ng-template>
+
+  <!-- Modal para agregar/editar -->
+  <!-- Modal Structure -->
+  <div *ngIf="mostrarModal" class="modal">
+    <div class="modal-contenido">
+      <h3>{{ selectedHeadphone.id ? 'Editar' : 'Agregar' }} Audífono</h3>
+
+      <!-- Form for Adding/Editing Headphones -->
+      <form (ngSubmit)="saveHeadphone(selectedHeadphone)">
+        <input [(ngModel)]="selectedHeadphone.nombreProducto" name="nombreProducto" placeholder="Nombre del Producto" required />
+        <input [(ngModel)]="selectedHeadphone.codigoBarras" name="codigoBarras" placeholder="Código de Barras" />
+        <input [(ngModel)]="selectedHeadphone.cantidad" name="cantidad" placeholder="Cantidad" type="number" />
+        <input [(ngModel)]="selectedHeadphone.precio" name="precio" placeholder="Precio" type="number" />
+        <input [(ngModel)]="selectedHeadphone.categoria" name="categoria" placeholder="Categoría" />
+        <input [(ngModel)]="selectedHeadphone.proveedor" name="proveedor" placeholder="Proveedor" />
+
+        <!-- Description Field -->
+        <textarea [(ngModel)]="selectedHeadphone.descripcion" name="descripcion" placeholder="Descripción"></textarea>
+
+        <!-- Checkbox for In Stock -->
+        <label>
+          <input [(ngModel)]="selectedHeadphone.enStock" name="enStock" type="checkbox" /> En Stock
+        </label>
+
+        <!-- Save and Cancel Buttons -->
+        <button type="submit" class="guardar">Guardar</button>
+        <button type="button" (click)="cerrarModal()" class="cancelar">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal para confirmar eliminación -->
+  <div *ngIf="mostrarModalEliminar" class="modal-eliminar">
+    <div class="modal-contenido">
+      <h3>¿Estás seguro de eliminar este audífono?</h3>
+      <button (click)="deleteHeadphoneConfirmed()" class="guardar">Eliminar</button>
+      <button (click)="cancelarEliminar()" class="cancelar">Cancelar</button>
+    </div>
+  </div>
+</div>

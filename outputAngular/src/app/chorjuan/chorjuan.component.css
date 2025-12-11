@@ -1,0 +1,306 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for product list */
+.lista-contenedor {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+/* Button to add a new product */
+.agregar {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #343a40;;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.agregar:hover {
+  background-color: grey;
+  transform: scale(1.1);
+}
+
+.lista-contenedor h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 60px;
+  color: #333;
+}
+
+/* Product list */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px;
+}
+
+li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+li div {
+  display: flex;
+  gap: 10px;
+}
+
+li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #343a40;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+li button:hover {
+  color: grey;
+  transform: scale(1.1);
+}
+
+li button:nth-child(2) {
+  color: #e63946;
+}
+
+li button:nth-child(2):hover {
+  color: #b83238;
+}
+
+/* Delete Modal */
+.modal-eliminar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-contenido {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.modal-contenido h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.modal-contenido input,
+.modal-contenido textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+
+.modal-contenido input:focus,
+.modal-contenido textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.modal-contenido .checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+.modal-contenido .checkbox-container input[type="checkbox"] {
+  margin-right: 8px;
+  width: auto;
+}
+
+.modal-contenido button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.modal-contenido button:first-child {
+  color: #4caf50;
+}
+
+.modal-contenido button:last-child {
+  color: #f44336;
+}
+
+/* Close button for modal */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+
+/* Modal de agregar/editar producto */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.cerrar:hover {
+  color: #333;
+}
+
+.modal-contenido .guardar {
+  background-color: #343a40;;
+  color: white;
+}
+
+.modal-contenido .guardar:hover {
+  background-color: grey;
+}
+
+.modal-contenido .cancelar {
+  background-color: #f8f9fa;
+  color: #dc3545;
+}
+
+.modal-contenido .cancelar:hover {
+  background-color: #e2e6ea;
+}
+/* Campo de búsqueda */
+.buscar {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Controles de paginación */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.paginacion button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #343a40;
+  color: white;
+  font-size: 1rem;
+}
+
+.paginacion button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginacion span {
+  font-size: 1rem;
+  color: #333;
+}
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f2f5;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-controls button.active {
+  background-color: #343a40;
+  color: white;
+}
+
+.pagination-controls button:hover {
+  background-color: grey;
+}
+
+

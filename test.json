@@ -1,0 +1,8 @@
+{
+  "tableName": "MANCHITAS",
+  "columns": [
+    ["nombre", "VARCHAR(100)"],
+    ["edad", "INT"],
+    ["color", "VARCHAR(50)"]
+  ]
+}

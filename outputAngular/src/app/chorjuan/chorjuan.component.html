@@ -1,0 +1,76 @@
+<div class="lista-contenedor">
+  <!-- Botón para agregar nuevo producto -->
+  <button class="agregar" (click)="abrirModal()">
+    <i class="fas fa-plus"></i>
+  </button>
+
+  <!-- Título de la lista -->
+  <h3>Tu lista</h3>
+
+  <!-- Campo de búsqueda -->
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="applyFilters()"
+    placeholder="Buscar..."
+    class="buscar"
+  />
+
+  <!-- Lista de Productos -->
+   <ul>
+        <li *ngFor="let chorjuan of paginatedChorjuan">
+        <span>{{ chorjuan.nombre }}</span>
+        <span>{{ chorjuan.fecha }}</span>
+        <span>{{ chorjuan.hora }}</span>
+        <button class="editar" (click)="abrirModal(chorjuan)">
+            <i class="fas fa-edit"></i>
+        </button>
+        <button class="eliminar" (click)="confirmDelete(chorjuan.idChorjuan)">
+            <i class="fas fa-trash"></i>
+        </button>
+    </li>
+  </ul>
+
+
+  <!-- PAGINATION_PLACEHOLDER -->
+  <div class="paginacion">
+    <button [disabled]="currentPage === 1" (click)="previousPage()">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button [disabled]="currentPage === totalPages" (click)="nextPage()">Siguiente</button>
+  </div>
+
+
+  <!-- Modal para agregar/editar producto -->
+<div class="modal" *ngIf="mostrarModal">
+  <div class="modal-contenido">
+    <span class="cerrar" (click)="cerrarModal()">&times;</span>
+    <h2>{{ selectedChorjuan.idChorjuan ? 'Edita' : 'Agrega' }}</h2>
+
+    <form #chorjuanForm="ngForm">
+            <label>nombre</label>
+      <input type="text" [(ngModel)]="selectedChorjuan.nombre"
+             name="nombre" required />
+      <label>fecha</label>
+      <input type="date" [(ngModel)]="selectedChorjuan.fecha"
+             name="fecha" required />
+      <label>hora</label>
+      <input type="datetime-local" [(ngModel)]="selectedChorjuan.hora"
+             name="hora" required />
+      <button type="button" [disabled]="!chorjuanForm.valid" (click)="saveChorjuan(selectedChorjuan)">Guardar</button>
+      <button type="button" class="cancelar" (click)="cerrarModal()">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal de confirmación de eliminación -->
+<div *ngIf="mostrarModalEliminar" class="modal-eliminar">
+  <div class="modal-contenido">
+    <h3>¿Estás seguro de que deseas eliminar este registro?</h3>
+    <button (click)="deleteChorjuanConfirmed()">
+      <i class="fas fa-check"></i> Sí
+    </button>
+    <button (click)="cancelarEliminar()">
+      <i class="fas fa-times"></i> No
+    </button>
+  </div>
+</div>

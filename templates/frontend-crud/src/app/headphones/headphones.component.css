@@ -1,0 +1,260 @@
+/* Estilos generales, similares a productos */
+.lista-headphones-contenedor {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.agregar-headphone:hover {
+  background-color: grey;
+  transform: scale(1.1);
+}
+
+.lista-headphones-contenedor h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 60px;
+  color: #333;
+}
+
+/* Lista de Headphones */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px;
+}
+
+li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+li div {
+  display: flex;
+  gap: 10px;
+}
+
+li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #343a40;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+li button:hover {
+  color: grey;
+  transform: scale(1.1);
+}
+
+.icono-papelera {
+  color: #dc3545; /* Mismo color que el botón cancelar */
+}
+.icono-papelera:hover {
+  color: #b83238; /* Color más oscuro en hover */
+}
+
+
+/* Estilos del modal de eliminación */
+.modal-eliminar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+
+
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+modal-contenido input,
+ .modal-contenido textarea {
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 15px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 1rem;
+   box-sizing: border-box;
+ }
+
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.cerrar:hover {
+  color: #333;
+}
+
+.modal-contenido .guardar {
+  background-color: #343a40;
+  color: white;
+}
+
+.modal-contenido .cancelar {
+  background-color: #f8f9fa;
+  color: #dc3545;
+}
+
+/* Botón para agregar nuevo elemento */
+.agregar-producto, .agregar-headphone {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #343a40;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.agregar-producto:hover, .agregar-headphone:hover {
+  background-color: grey;
+  transform: scale(1.1);
+}
+
+
+
+.modal-contenido {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-contenido .guardar {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-contenido .guardar:hover {
+  background-color: grey;
+}
+
+.modal-contenido .cancelar {
+  background-color: #f8f9fa;
+  color: #dc3545;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-contenido .cancelar:hover {
+  background-color: #e2e6ea;
+}
+
+/* Flex container for title and add button */
+.headphones-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* Center align the title within the flex container */
+.headphones-header h3 {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+h3{
+  text-align: center;
+  font-weight: 600;
+  margin-top: 60px;
+  color: #333;
+}
+/* Add button styling */
+.agregar-headphone {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #343a40;;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.agregar-headphone:hover {
+  background-color: grey;
+  transform: scale(1.1);
+}

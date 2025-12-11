@@ -1,0 +1,17 @@
+
+added 980 packages, and audited 981 packages in 41s
+
+151 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (9 low, 7 moderate, 16 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+ior to v4 are no longer supported
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported

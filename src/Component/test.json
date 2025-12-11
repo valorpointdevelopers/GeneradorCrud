@@ -1,0 +1,9 @@
+{
+  "tableName": "Jacob",
+  "columns": [
+    ["id", "int"],
+    ["nombre", "varchar"],
+    ["edad", "int"]
+  ],
+  "databaseName": "mi_base"
+}
